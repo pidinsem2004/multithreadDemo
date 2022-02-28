@@ -6,18 +6,13 @@ public class ThreadDemo {
    private String threadName ;
    private Runnable runnable;
 
-
-
-
    public ThreadDemo(String threadName) {
         this.threadName = threadName;
         this.setRunnable();
         System.out.println("creating Thread " + threadName);
-
-
    }
 
-    public void start () {
+   public void start () {
      System.out.println("Starting " +  getThreadName() );
         if (t == null) {
             t = new Thread (getRunnable());
@@ -61,8 +56,5 @@ public class ThreadDemo {
     public void setThreadName(String threadName) {
         this.threadName = threadName;
     }
-
-
-
 
 }

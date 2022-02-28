@@ -12,13 +12,20 @@ public class BusyWaitingDemo extends  Thread  {
 
     @Override
     public void run(){
-        long timeToStop = System.currentTimeMillis() + 5000;
-        long currentTimemillis = System.currentTimeMillis();
+        long timeOut = System.currentTimeMillis() + 5000;
+        long currentTimeMillis = System.currentTimeMillis();
 
-        while (currentTimemillis< timeToStop)
+        while (currentTimeMillis< timeOut) {
             // you can add condition to the while
-              currentTimemillis = System.currentTimeMillis();
+            currentTimeMillis = System.currentTimeMillis();
+            System.out.println("...Still waiting");
+        }
+        System.out.println("It's time now");
+    }
 
+    public static void main(String[]args){
+        BusyWaitingDemo busyWaitingDemo = new BusyWaitingDemo();
+        busyWaitingDemo.start();
 
     }
 
